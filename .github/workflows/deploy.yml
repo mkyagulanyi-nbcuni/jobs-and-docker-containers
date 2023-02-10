@@ -12,7 +12,7 @@ jobs:
     environment: testing
     runs-on: ubuntu-latest
     container:
-      image: node:18
+      image: node:18 # Node version
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb+srv
       MONGODB_CLUSTER_ADDRESS: cluster0.nbgwkbl.mongodb.net
