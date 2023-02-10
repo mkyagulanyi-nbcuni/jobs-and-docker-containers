@@ -27,7 +27,7 @@ jobs:
           path: node_modules
           key: ${{ env.CACHE_KEY }}-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        if: steps.cache-step.outputs.cache-hit != 'true'
+        if: steps.cache-step.outputs.cache-hit != 'true' # Only installs packages on cache miss
         run: npm ci
       - name: Run server
         run: npm start & npx wait-on http://127.0.0.1:$PORT # requires MongoDB Atlas to accept requests from anywhere!
